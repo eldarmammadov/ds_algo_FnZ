@@ -1,14 +1,14 @@
 
 
 def bubble(arr,sorted=[]):
-"""rebinding of index element of a parameterized list happens"""
 	sorted = [None] * (len(arr))
 	unsorted = True
 	while unsorted:
 		for k in range(len(arr)):
+			print(k)
 			try:
 				unsorted = False
-				if arr[k] > arr[k+1]:
+				if k != len(arr)+1 and arr[k] >= arr[k+1]:
 					unsorted = True
 					sorted[k] = arr[k]
 					sorted[k+1] = arr[k+1]
@@ -17,7 +17,7 @@ def bubble(arr,sorted=[]):
 					print(arr)
 			except:
 				print('error')
-				return arr
+				bubble(arr)
 	return arr
 	
 
