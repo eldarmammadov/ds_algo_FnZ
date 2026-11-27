@@ -3,13 +3,20 @@
 def bubble(arr,sorted=[]):
 	sorted = [None] * (len(arr))
 	unsorted = True
+	counter = 0
+	length = len(arr)
 	while unsorted:
+		unsorted = False
+		counter += 1
+		print(counter)
+		if counter == length:
+			break
 		for k in range(len(arr)):
 			print(k)
 			try:
-				unsorted = False
-				if k != len(arr)+1 and arr[k] >= arr[k+1]:
-					unsorted = True
+				
+				if arr[k] >= arr[k+1]:
+					
 					sorted[k] = arr[k]
 					sorted[k+1] = arr[k+1]
 					arr[k] = sorted[k+1]
@@ -17,12 +24,13 @@ def bubble(arr,sorted=[]):
 					print(arr)
 			except:
 				print('error')
-				bubble(arr)
+				unsorted = True
 	return arr
 	
 
 
-list = [4,3,2,1]
-bubble([2,1,3])
+list = [4,3,2,1, 7,9,8,12,60]
+s = list[:]
+bubble(list)
 
 
